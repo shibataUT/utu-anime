@@ -1,0 +1,190 @@
+main{
+  margin-top: 5%;
+  min-height: 82vh;
+}
+
+.bg-dark {
+  background-color: #263238!important;
+}
+
+/** チャット風UI */
+.oneArea {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  max-width: 1024px;
+  margin: 50px auto;
+  padding: 0 10px;
+}
+.oneArea .onebox {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: flex-start;
+}
+.oneArea .onebox:nth-child(even) {
+  flex-direction: row-reverse;
+  margin-top: 20px;
+}
+.oneArea .onebox .imgArea {
+  width: 16%;
+  position: relative;
+}
+.oneArea .onebox .imgArea img {
+  width: 100%;
+  max-width: 130px;
+  position: absolute;
+  top: 0;
+}
+.oneArea .onebox:nth-child(odd) .imgArea img {
+  left: 0;
+  padding-right: 30px;
+}
+.oneArea .onebox:nth-child(even) .imgArea img {
+  right: 0;
+  padding-left: 30px;
+}
+.oneArea .onebox .fukiArea {
+  width: 63%;
+}
+.oneArea .onebox .fukidasi {
+  width: 100%;
+  position: relative;
+  padding: 25px;
+  background-color: #f2f3f7;
+  font-size: 18px;
+  color: #231815;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+.oneArea .onebox .fukidasi::before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 22px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 30px 15px 0;
+  border-color: transparent #f2f3f7 transparent transparent;
+}
+.oneArea .onebox:nth-child(odd) .fukidasi::before {
+  left: -20px;
+}
+.oneArea .onebox:nth-child(even) .fukidasi {
+  background-color: #fde5e5;
+}
+.oneArea .onebox:nth-child(even) .fukidasi::before {
+  right: -20px;
+  border-color: transparent #fde5e5 transparent transparent;
+  transform: rotate(180deg);
+}
+@media screen and (max-width: 1024px) {
+  .oneArea .onebox .imgArea img {
+    max-width: 100%;
+  }
+  .oneArea .onebox .fukidasi {
+    padding: 15px;
+    font-size: 14px;
+  }
+  .oneArea .onebox .fukidasi::before {
+    top: 8px;
+  }
+}
+@media screen and (max-width: 420px) {
+  main{
+    margin-top: 15%
+  }
+  .oneArea {
+    margin: 30px auto;
+  }
+  .oneArea .onebox:nth-child(even) {
+    margin-top: 15px;
+  }
+  .oneArea .onebox .imgArea {
+    width: 20%;
+  }
+  .oneArea .onebox .fukidasi {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+}
+
+/** ボタン */
+.btn-box {
+  margin: 5px 5px 5px 5px;
+  display: inline-block;
+}
+.btn-flat-border {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+}
+.btn-flat-border:hover {
+  background: #67c5ff;
+  color: white;
+}
+
+/** ローディング処理 */
+.loader,
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: load7 1.8s infinite ease-in-out;
+  animation: load7 1.8s infinite ease-in-out;
+}
+.loader {
+  color: #a9a9a9;
+  font-size: 7px;
+  margin: 20px auto;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+.loader:before {
+  left: -3.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  left: 3.5em;
+}
+@-webkit-keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+@keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
