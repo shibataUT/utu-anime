@@ -5,6 +5,8 @@ $(function () {
     // 回答テキスト表示
     $('.oneArea').append("<div class='onebox'><div class='imgArea'><img src='/img/icon.png'></div><div class='fukiArea'><div class='fukidasi'>" + $(this).text() + "</div></div></div>");
     $('.oneArea').append("<div class='onebox'><div class='imgArea'><img src='/img/LainTwist.gif'></div><div class='fukiArea'><div class='fukidasi'><div class='loader'>Loading...</div><br><br></div></div></div>");
+    // 回答ボタンの非活性
+    $("[id=" + this.id + "]").prop("disabled", true);
     setTimeout(apiExec, 2000, this);
   });
 

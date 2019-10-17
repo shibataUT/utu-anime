@@ -47,7 +47,7 @@ public class ApiController {
     var ans = Selection.idOf(value);
     String result = null;
     if(ans.getNextQuestion() == null) {
-      result = "<div class='onebox'><div class='imgArea'><img src='/img/LainTwist.gif'></div><div class='fukiArea'><div class='fukidasi'><p>あなたにおすすめのアニメは「" + ans.getResultAnime().getName() + "」です。</p></div></div></div>";
+      result = "<div class='onebox'><div class='imgArea'><img src='/img/LainTwist.gif'></div><div class='fukiArea'><div class='fukidasi'><p>あなたにおすすめのアニメは「" + ans.getResultAnime().getName() + "」です。</p><br><button type='button' class='btn btn-info' onclick='window.location.reload();'>もう一度診断する</button></div></div></div>";
       // 結果保存
       var restTemplate = new RestTemplate();
       var url = URL + ans.getResultAnime().getCode();
